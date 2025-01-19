@@ -6,12 +6,12 @@ import { resolve } from "path";
 export default defineConfig({
   plugins: [vue()],
 
-  // 개발 모드일 때의 설정
-  root: "./examples", // examples 디렉토리를 루트로 설정
+  // Configuration for development mode
+  root: "./examples", // Set the examples directory as the root
 
-  // 빌드 설정 (라이브러리 모드)
+  // Build settings (library mode)
   build: {
-    // 라이브러리 빌드시의 설정
+    // Settings for building the library
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
       name: "VueMovingLight",
@@ -25,12 +25,12 @@ export default defineConfig({
         },
       },
     },
-    // 빌드 출력 디렉토리
+    // Output directory for the build
     outDir: "../dist",
     emptyOutDir: true,
   },
 
-  // 개발 서버 설정
+  // Development server settings
   server: {
     port: 3000,
   },

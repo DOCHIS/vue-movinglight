@@ -24,6 +24,7 @@ Vue.js 애플리케이션을 위한 커스터마이징 가능한 무빙라이트
 
 <p align="center">
   <img src="./docs/preview.gif" alt="Vue Moving Light 데모" width="600px">
+  <img src="./docs/preview2.gif" alt="Vue Moving Light 데모" width="600px">
 </p>
 
 ## 주요 기능
@@ -61,20 +62,20 @@ pnpm add vue-movinglight
 
 ```typescript
 // main.ts
-import { createApp } from 'vue'
-import MovingLight from 'vue-movinglight'
-import 'vue-movinglight/dist/style.css'
+import { createApp } from "vue";
+import MovingLight from "vue-movinglight";
+import "vue-movinglight/dist/style.css";
 
-const app = createApp(App)
-app.use(MovingLight)
+const app = createApp(App);
+app.use(MovingLight);
 ```
 
 ### 지역 등록
 
 ```vue
 <script setup lang="ts">
-import { MovingLight } from 'vue-movinglight'
-import 'vue-movinglight/dist/style.css'
+import { MovingLight } from "vue-movinglight";
+import "vue-movinglight/dist/style.css";
 </script>
 
 <template>
@@ -90,21 +91,21 @@ import 'vue-movinglight/dist/style.css'
 
 ## Props 속성
 
-| Prop | 타입 | 기본값 | 설명 |
-|------|------|--------|------|
-| position | 'top' \| 'left' \| 'right' \| 'bottom' | 'top' | 무빙라이트가 설치될 위치 |
-| positionType | 'fixed' \| 'absolute' | 'fixed' | CSS position 타입 |
-| pan | number | 0 | 팬(좌우) 각도 (-270 ~ +270도) |
-| tilt | number | 0 | 틸트(상하) 각도 (-135 ~ +135도) |
-| panSpeed | number | 90 | 팬 이동 속도 (초당 1-540도) |
-| tiltSpeed | number | 90 | 틸트 이동 속도 (초당 1-270도) |
-| color | string | '#ffffff' | CSS 색상 형식의 빔 색상 |
-| intensity | number | 100 | 빔 강도 백분율 (0-100) |
-| beamWidth | number | 10 | 빔 너비 (0-180도) |
-| beamLength | number | 1000 | 빔 길이 (0-10000 픽셀) |
-| prismEnabled | boolean | false | 프리즘 효과 활성화 여부 |
-| prismFacets | number | 3 | 프리즘 면 개수 (2-5) |
-| prismRotation | number | 0 | 프리즘 회전 각도 (-360 ~ +360도) |
+| Prop          | 타입                                   | 기본값    | 설명                             |
+| ------------- | -------------------------------------- | --------- | -------------------------------- |
+| position      | 'top' \| 'left' \| 'right' \| 'bottom' | 'top'     | 무빙라이트가 설치될 위치         |
+| positionType  | 'fixed' \| 'absolute'                  | 'fixed'   | CSS position 타입                |
+| pan           | number                                 | 0         | 팬(좌우) 각도 (-270 ~ +270도)    |
+| tilt          | number                                 | 0         | 틸트(상하) 각도 (-135 ~ +135도)  |
+| panSpeed      | number                                 | 90        | 팬 이동 속도 (초당 1-540도)      |
+| tiltSpeed     | number                                 | 90        | 틸트 이동 속도 (초당 1-270도)    |
+| color         | string                                 | '#ffffff' | CSS 색상 형식의 빔 색상          |
+| intensity     | number                                 | 100       | 빔 강도 백분율 (0-100)           |
+| beamWidth     | number                                 | 10        | 빔 너비 (0-180도)                |
+| beamLength    | number                                 | 1000      | 빔 길이 (0-10000 픽셀)           |
+| prismEnabled  | boolean                                | false     | 프리즘 효과 활성화 여부          |
+| prismFacets   | number                                 | 3         | 프리즘 면 개수 (2-5)             |
+| prismRotation | number                                 | 0         | 프리즘 회전 각도 (-360 ~ +360도) |
 
 ## 예제
 
@@ -141,26 +142,21 @@ import 'vue-movinglight/dist/style.css'
 
 ```vue
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref } from "vue";
 
-const pan = ref(0)
-const tilt = ref(0)
+const pan = ref(0);
+const tilt = ref(0);
 
 const updatePosition = (event: MouseEvent) => {
-  const { clientX, clientY } = event
-  pan.value = (clientX / window.innerWidth * 540) - 270
-  tilt.value = (clientY / window.innerHeight * 270) - 135
-}
+  const { clientX, clientY } = event;
+  pan.value = (clientX / window.innerWidth) * 540 - 270;
+  tilt.value = (clientY / window.innerHeight) * 270 - 135;
+};
 </script>
 
 <template>
   <div @mousemove="updatePosition">
-    <MovingLight
-      :pan="pan"
-      :tilt="tilt"
-      color="#00ffff"
-      :intensity="90"
-    />
+    <MovingLight :pan="pan" :tilt="tilt" color="#00ffff" :intensity="90" />
   </div>
 </template>
 ```

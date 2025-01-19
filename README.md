@@ -24,6 +24,7 @@ A customizable moving light component for Vue.js applications, perfect for creat
 
 <p align="center">
   <img src="./docs/preview.gif" alt="Vue Moving Light Demo" width="600px">
+  <img src="./docs/preview2.gif" alt="Vue Moving Light Demo" width="600px">
 </p>
 
 ## Features

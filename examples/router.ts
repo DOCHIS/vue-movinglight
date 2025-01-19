@@ -7,10 +7,6 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      redirect: "/single",
-    },
-    {
-      path: "/single",
       name: "single",
       component: SingleLightDemo,
     },
