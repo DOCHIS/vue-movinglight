@@ -16,7 +16,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
 [![Vue.js](https://img.shields.io/badge/Vue.js-%3E%3D%203.0.0-green.svg)](https://vuejs.org/)
 
-[데모 보기](https://stackblitz.com/~/github.com/DOCHIS/vue-movinglight) · [버그 신고](https://github.com/DOCHIS/vue-movinglight/issues) · [기능 요청](https://github.com/DOCHIS/vue-movinglight/issues)
+[라이브 데모](https://vue-movinglight.vercel.app/) · [StackBlitz에서 시도하기](https://stackblitz.com/~/github.com/DOCHIS/vue-movinglight) · [버그 신고](https://github.com/DOCHIS/vue-movinglight/issues) · [기능 요청](https://github.com/DOCHIS/vue-movinglight/issues)
 
 </div>
 
@@ -39,9 +39,12 @@ Vue.js 애플리케이션을 위한 커스터마이징 가능한 무빙라이트
 
 ## 데모
 
-인터랙티브 플레이그라운드에서 Vue Moving Light를 직접 체험해보세요:
+Vue Moving Light 체험하기:
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/~/github.com/DOCHIS/vue-movinglight)
+- [라이브 데모](https://vue-movinglight.vercel.app/)
+- [StackBlitz 인터랙티브 플레이그라운드](https://stackblitz.com/~/github.com/DOCHIS/vue-movinglight)
+
+[![Vue Moving Light 데모](./docs/preview.gif)](https://vue-movinglight.vercel.app/)
 
 ## 설치 방법
 
@@ -163,10 +166,11 @@ const updatePosition = (event: MouseEvent) => {
 
 ## 브라우저 지원
 
-- Chrome (최신 버전)
-- Firefox (최신 버전)
-- Safari (최신 버전)
-- Edge (최신 버전)
+- Chrome (70+)
+- Firefox (68+)
+- Safari (13.1+)
+- Edge (79+)
+- IE는 지원하지 않습니다
 
 ## 기여하기
 

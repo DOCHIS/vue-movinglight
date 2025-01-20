@@ -16,7 +16,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
 [![Vue.js](https://img.shields.io/badge/Vue.js-%3E%3D%203.0.0-green.svg)](https://vuejs.org/)
 
-[Live Demo](https://stackblitz.com/~/github.com/DOCHIS/vue-movinglight) · [Report Bug](https://github.com/DOCHIS/vue-movinglight/issues) · [Request Feature](https://github.com/DOCHIS/vue-movinglight/issues)
+[Live Demo](https://vue-movinglight.vercel.app/) · [Try on StackBlitz](https://stackblitz.com/~/github.com/DOCHIS/vue-movinglight) · [Report Bug](https://github.com/DOCHIS/vue-movinglight/issues) · [Request Feature](https://github.com/DOCHIS/vue-movinglight/issues)
 
 </div>
 
@@ -39,9 +39,12 @@ A customizable moving light component for Vue.js applications, perfect for creat
 
 ## Demo
 
-Try out Vue Moving Light in our interactive playground:
+Experience Vue Moving Light:
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/~/github.com/DOCHIS/vue-movinglight)
+- [Live Demo](https://vue-movinglight.vercel.app/)
+- [Interactive Playground on StackBlitz](https://stackblitz.com/~/github.com/DOCHIS/vue-movinglight)
+
+[![Vue Moving Light Demo](./docs/preview.gif)](https://vue-movinglight.vercel.app/)
 
 ## Installation
 
@@ -163,10 +166,11 @@ const updatePosition = (event: MouseEvent) => {
 
 ## Browser Support
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
+- Chrome (70+)
+- Firefox (68+)
+- Safari (13.1+)
+- Edge (79+)
+- IE is not supported
 
 ## Contributing
 

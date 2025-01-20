@@ -1,0 +1,11 @@
+{
+  "buildCommand": "npm run build:demo",
+  "outputDirectory": "dist-demo",
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
