@@ -74,3 +74,4 @@ export {
   _sfc_main as MovingLight,
   index as default
 };
+//# sourceMappingURL=vue-movinglight.esm.js.map
