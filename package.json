@@ -1,6 +1,6 @@
 {
   "name": "vue-movinglight",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A customizable moving light component for Vue.js applications, perfect for creating dynamic lighting effects, stage lighting simulations, or interactive UI elements.",
   "main": "dist/vue-movinglight.umd.js",
   "module": "dist/vue-movinglight.esm.js",
