@@ -69,14 +69,12 @@
     }
   }
 
-  // ... (previous code remains the same until beam section)
-
   // Light beam effect
   &-beam {
     position: absolute;
     top: 100%;
     left: 50%;
-    width: 200px; // Significantly wider than the light head
+    width: 200px;
     height: var(--beam-length);
     transform-origin: top center;
     transform: translate(-50%, 0);
