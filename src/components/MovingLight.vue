@@ -24,6 +24,11 @@
 import { computed } from "vue";
 import "../styles/movinglight.scss";
 import type { MovingLightProps } from "../types";
+import type { CSSProperties } from "vue";
+
+interface CustomCSSProperties extends CSSProperties {
+  [key: `--${string}`]: string | number;
+}
 
 const props = withDefaults(defineProps<MovingLightProps>(), {
   position: "top",
@@ -52,9 +57,10 @@ const calculateMovementTime = (
 };
 
 // Compute dynamic styles including movement timing
-const lightStyle = computed(() => {
+const lightStyle = computed<CustomCSSProperties>(() => {
   const panDuration = calculateMovementTime(0, props.pan, props.panSpeed);
   const tiltDuration = calculateMovementTime(0, props.tilt, props.tiltSpeed);
+
   return {
     position: props.positionType,
     "--pan-angle": `${props.pan}deg`,

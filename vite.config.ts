@@ -1,22 +1,57 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import { resolve } from "path";
+import dts from "vite-plugin-dts";
 
-// https://vitejs.dev/config/
 export default defineConfig(({ command }) => {
   const baseConfig = {
-    plugins: [vue()],
+    plugins: [
+      vue(),
+      dts({
+        include: ["src/**/*.ts", "src/**/*.vue"],
+        exclude: ["src/**/*.spec.ts", "src/**/*.test.ts"],
+        tsconfigPath: "./tsconfig.json",
+        outDir: "dist/types",
+        staticImport: true,
+        insertTypesEntry: true,
+        rollupTypes: true,
+        cleanVueFileName: true,
+        afterBuild: () => {
+          console.log("✓ Type declarations generated successfully");
+        },
+      }),
+    ],
+    test: {
+      environment: "jsdom",
+      globals: true,
+      root: "./",
+      include: ["src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
+      coverage: {
+        provider: "v8",
+        reporter: ["text", "json", "html"],
+        include: ["src/**/*.{vue}"],
+        exclude: [
+          "examples/**",
+          "node_modules/**",
+          "dist/**",
+          "**/*.d.ts",
+          "**/*.test.ts",
+          "**/*.spec.ts",
+        ],
+      },
+    },
     build: {
       target: ["es2018", "chrome70", "edge79", "firefox68", "safari13.1"],
-      polyfillModulePreload: true,
+      modulePreload: { polyfill: true },
       cssCodeSplit: true,
       minify: "terser",
       terserOptions: {
         compress: {
-          drop_console: false,
+          drop_console: process.env.NODE_ENV === "production",
           drop_debugger: true,
         },
       },
+      sourcemap: true,
     },
   };
 
@@ -26,6 +61,7 @@ export default defineConfig(({ command }) => {
       root: "./examples",
       server: {
         port: 3000,
+        host: true,
       },
     };
   }
@@ -46,6 +82,7 @@ export default defineConfig(({ command }) => {
         rollupOptions: {
           external: ["vue"],
           output: {
+            exports: "named",
             globals: {
               vue: "Vue",
             },
