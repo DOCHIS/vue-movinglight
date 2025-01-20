@@ -9,7 +9,7 @@ export default defineConfig(({ command }) => {
     build: {
       target: ["es2018", "chrome70", "edge79", "firefox68", "safari13.1"],
       polyfillModulePreload: true,
-      cssCodeSplit: true,
+      cssCodeSplit: false, // Prevent CSS code splitting
       minify: "terser",
       terserOptions: {
         compress: {
@@ -41,13 +41,17 @@ export default defineConfig(({ command }) => {
           entry: resolve(__dirname, "src/index.ts"),
           name: "VueMovingLight",
           fileName: (format) =>
-            `vue-movinglight.${format === "umd" ? "umd" : "esm"}.js`,
+            `vue-movinglight.${format === "umd" ? "umd" : "es"}.js`,
         },
         rollupOptions: {
           external: ["vue"],
           output: {
             globals: {
               vue: "Vue",
+            },
+            assetFileNames: (assetInfo) => {
+              if (assetInfo.name === "style.css") return "style.css";
+              return assetInfo.name;
             },
           },
         },
