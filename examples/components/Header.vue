@@ -41,7 +41,7 @@
           <span class="sr-only">Toggle menu</span>
         </button>
         <div class="nav-links" :class="{ 'is-open': isMenuOpen }">
-          <router-link to="/single" @click="isMenuOpen = false"
+          <router-link to="/" @click="isMenuOpen = false"
             >Single Light</router-link
           >
           <router-link to="/showroom" @click="isMenuOpen = false"
